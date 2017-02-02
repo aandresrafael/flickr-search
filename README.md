@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Description
+The Flickr API has a method which allows you to search photos. Create a Ruby on Rails web application that allows users to search for The requirements below are purposely light. The devil’s in the detail and it’s the little things that count.
 
-Things you may want to cover:
+#Requirements
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Build app the lets the user performs a search
+Show results when the user clicks on a search result
+Test with RSpec
+Commit to Github
+Deploy to Heroku
+Send your GitHub and Heroku links for us to review.
