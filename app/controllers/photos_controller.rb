@@ -9,10 +9,16 @@ class PhotosController < ApplicationController
     FlickRaw.api_key = Rails.application.secrets.flickr_key
     FlickRaw.shared_secret = Rails.application.secrets.flickr_secret
 
-    flickr.photos.search(:tags => params[:query], :per_page => 100).each do |photo|
-      @photos << photo
+    @photos = Rails.cache.fetch(params[:query],
+      expires_in: cache_expire,
+      race_condition_ttl: race_condition_ttl) do
+
+      flickr.photos.search(tags: params[:query], per_page: per_page ).each do |photo|
+        @photos << photo
+      end
     end
 
     render :index
   end
+
 end

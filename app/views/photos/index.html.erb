@@ -16,10 +16,12 @@
   <% end %>
 </div>
 
-<h3> Results for <strong><%= params[:query] %></strong> </h3>
-<div class="row mt-20">
-  <%= render partial: 'photo', collection: @photos if @photos.present? %>
-</div>
-<div class="row mt-20">
+<% if @photos.present? %>
+  <h3> Results for <strong><%= params[:query] %></strong> </h3>
+  <div class="row mt-20">
+    <%= render partial: 'photo', collection: @photos %>
+  </div>
 
-</div>
+  <div class="row mt-20">
+  </div>
+<% end %>
