@@ -18,10 +18,12 @@
 
 <% if @photos.present? %>
   <h3> Results for <strong><%= params[:query] %></strong> </h3>
-  <div class="row mt-20">
+  <div class="row mt-20" id="photos-list">
     <%= render partial: 'photo', collection: @photos %>
   </div>
 
   <div class="row mt-20">
+    <%= link_to "Show more", search_path(query: @query, page: @page.to_i.next), method: :post, remote: true, class: 'btn btn-primary btn-lg btn-block', id: 'show-more'
+    %>
   </div>
 <% end %>

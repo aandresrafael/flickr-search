@@ -1,0 +1,2 @@
+jQuery("#photos-list").append("<%= escape_javascript(render partial: 'photo', collection: @photos) %>");
+jQuery("#show-more").attr('href', "<%= search_path(query: @query, page: @page.to_i.next) %>");
