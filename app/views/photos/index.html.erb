@@ -1,0 +1,24 @@
+<h2>Flickr Photos Searcher</h2>
+<p>This is a Ruby on Rails web application that allows users to search for photos using the Flickr API</p>
+
+<div class="row">
+  <%= form_tag(search_path) do %>
+    <div class="col-lg-6">
+      <div class="input-group">
+        <%= text_field_tag :query, '', class: 'form-control' %>
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-default">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="row mt-20">
+  <%= render partial: 'photo', collection: @photos if @photos.present? %>
+</div>
+<div class="row mt-20">
+
+</div>
