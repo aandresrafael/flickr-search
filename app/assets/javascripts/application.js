@@ -17,3 +17,13 @@
 //= require lightbox-bootstrap
 //= require_tree .
 
+
+jQuery(document).ready(function ($) {
+  var button = $('#search-button');
+
+  $('#query').bind('keyup keydown', function() {
+    var isQueryEmpty = ($.trim($(this).val()) == "");
+    button.attr('disabled', isQueryEmpty);
+  });
+
+});
